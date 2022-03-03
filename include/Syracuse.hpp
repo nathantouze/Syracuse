@@ -1,14 +1,20 @@
 #ifndef SYRACUSE_HPP_
 #define SYRACUSE_HPP_
 
+#define OUTPUT_TERM true
+#define OUTPUT_FILE false
+
 #include "StringNum.hpp"
 
 class Syracuse {
     public:
-        static bool process(StringNum number);
-        static bool loopProcess(StringNum startingNumber);
+        Syracuse(bool output);
+        ~Syracuse();
+        bool process(StringNum number);
+        bool loopProcess(StringNum startingNumber);
     protected:
     private:
+        bool _output;
 };
 
 #endif /* !SYRACUSE_HPP_ */

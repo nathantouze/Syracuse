@@ -10,7 +10,9 @@ int main(int ac, char **av) {
         return 1;
     }
     StringNum number = StringNum(std::string(av[1]));
-
-    Syracuse::loopProcess(number);
+    Syracuse conjecture = Syracuse(OUTPUT_TERM);
+    
+    
+    conjecture.loopProcess(number);
     return 0;
 }
