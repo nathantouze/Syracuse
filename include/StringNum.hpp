@@ -22,6 +22,8 @@ class StringNum {
         void assign(const std::string &number);
         void multiply(const int &product);
         void add(const int &num);
+        std::string add(std::string str, int num) const;
+        void divide(const int &divider);
         const bool &isOutOfRange() const;
     protected:
     private:

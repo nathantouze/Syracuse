@@ -1,2 +1,2 @@
 ./compile.sh
-./syracuse 2222222222222222222222222222
+./syracuse 2345673

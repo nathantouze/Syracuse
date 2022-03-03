@@ -14,30 +14,27 @@ int main(int ac, char **av) {
     }
     StringNum number = StringNum(std::string(av[1]));
 
-    std::cout << number.toString() << " + 6 = ";
-    number.add(6);
-    std::cout << number.toString() << std::endl;
-
-    // std::fstream file;
-    // file.open("output.txt", std::ios::out);
+    std::fstream file;
+    file.open("output.txt", std::ios::out);
     
 
-    // file << "Starting number: " << number.toString() << std::endl;
-    // while (1) {
-    //     unsigned long long int tmp = number.toLong();
-    //     if (!number.isEven()) {
-    //         number.assign(number.toLong() * 3 + 1);
-    //         file << tmp << ": odd -> " << number.toString() << std::endl;
-    //     } else {
-    //         number.assign(number.toLong() / 2);
-    //         file << tmp << ": even -> " << number.toString() << std::endl;
-    //     }
-    //     if (number.toLong() == 4) {
-    //         file << "num = 4, syracuse conjecture failed." << std::endl;
-    //         std::cout << "syracuse failed." << std::endl;
-    //         break;
-    //     }
-    // }
-    // file.close();
+    file << "Starting number: " << number.toString() << std::endl;
+    while (1) {
+        std::string tmp = number.toString();
+        if (!number.isEven()) {
+            number.multiply(3);
+            number.add(1);
+            file << tmp << ": odd -> " << number.toString() << std::endl;
+        } else {
+            number.divide(2);
+            file << tmp << ": even -> " << number.toString() << std::endl;
+        }
+        if (number.toLong() == 4 || number.toLong() == 2 || number.toLong() == 1) {
+            file << "syracuse conjecture failed." << std::endl;
+            std::cout << "syracuse failed." << std::endl;
+            break;
+        }
+    }
+    file.close();
     return 0;
 }
