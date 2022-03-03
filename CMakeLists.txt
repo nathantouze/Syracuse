@@ -12,6 +12,7 @@ set(INCLUDE ./include)
 target_sources(syracuse PUBLIC
     ${SRC}/main.cpp
     ${SRC}/StringNum.cpp
+    ${SRC}/Syracuse.cpp
 )
 
 target_include_directories(syracuse PUBLIC
